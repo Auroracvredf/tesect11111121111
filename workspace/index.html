@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b0c0c">
+  <meta name="description" content="GPU//RADAR 显卡价格雷达：追踪热门显卡的每日价格、历史低点与渠道价差，看清每一次涨跌。">
+  <title>GPU//RADAR — 显卡价格雷达</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cpath d='M20 2 36 11v18L20 38 4 29V11Z' fill='%23d8ff47'/%3E%3Ccircle cx='20' cy='20' r='10' fill='%230b0c0c'/%3E%3Ccircle cx='20' cy='20' r='2.4' fill='%23d8ff47'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/styles.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <a class="skip-link" href="#catalog">跳到显卡列表</a>
+
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="GPU Radar 首页">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 40 40" role="img">
+            <path d="M20 1.5 37 10.7v18.6L20 38.5 3 29.3V10.7Z" fill="currentColor"/>
+            <circle cx="20" cy="20" r="10.4" fill="#0b0c0c"/>
+            <g fill="currentColor">
+              <path d="M20 12.2c3.2 0 5.2 2.1 4.6 4.9l-4.2-1.3Z"/>
+              <path d="M26.8 16.2c1.6 2.8.5 5.6-2.2 6.3l-1.1-4.2Z"/>
+              <path d="M27.5 23.1c-1.6 2.8-4.5 3.3-6.5 1.4l3.1-3Z"/>
+              <path d="M20 27.8c-3.2 0-5.2-2.1-4.6-4.9l4.2 1.3Z"/>
+              <path d="M13.2 23.8c-1.6-2.8-.5-5.6 2.2-6.3l1.1 4.2Z"/>
+              <path d="M12.5 16.9c1.6-2.8 4.5-3.3 6.5-1.4l-3.1 3Z"/>
+            </g>
+            <circle cx="20" cy="20" r="2.6" fill="currentColor"/>
+          </svg>
+        </span>
+        <span class="brand-type">GPU<span>//</span>RADAR</span>
+        <span class="brand-cn">显卡价格雷达</span>
+      </a>
+
+      <nav class="main-nav" aria-label="主导航">
+        <a class="is-active" href="#market">行情</a>
+        <a href="#catalog">全部显卡</a>
+        <button type="button" data-action="drops">降价榜</button>
+      </nav>
+
+      <div class="header-actions">
+        <span class="data-status"><i></i><span>演示数据</span><b>11:32</b></span>
+        <button class="alerts-button" id="alerts-open" type="button" aria-label="查看价格提醒">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>价格提醒</span>
+          <b class="alert-count" id="alert-count" hidden>0</b>
+        </button>
+        <button class="mobile-menu-button" id="mobile-menu-button" type="button" aria-label="展开菜单" aria-expanded="false" aria-controls="mobile-nav">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-nav" id="mobile-nav" hidden>
+      <a href="#market">行情</a>
+      <a href="#catalog">全部显卡</a>
+      <button type="button" data-action="drops">降价榜</button>
+      <button type="button" id="mobile-alerts-open">价格提醒</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="market">
+      <div class="hero-grid container">
+        <div class="hero-copy">
+          <p class="eyebrow hero-eyebrow"><span></span>GPU PRICE RADAR<span class="eyebrow-slash">/</span>2026</p>
+          <h1>显卡的价格，<br>不该靠<span class="hero-accent">猜<svg viewBox="0 0 210 24" preserveAspectRatio="none" aria-hidden="true"><path d="M3 17C45 6 114 5 207 12" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/></svg></span>。</h1>
+          <p class="hero-lead">每天记录 12 款热门显卡在京东、天猫、拼多多和线下渠道的价格。涨了多少、跌到哪里、离历史低点还有多远，一页看清。</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#catalog">
+              浏览全部显卡
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M14 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <button class="button button-ghost" type="button" data-action="drops">
+              看本周降价榜
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
+          <dl class="hero-facts">
+            <div><dt>在榜型号</dt><dd>12<small>款</small></dd></div>
+            <div><dt>价格历史</dt><dd>90<small>天</small></dd></div>
+            <div><dt>监测渠道</dt><dd>4<small>个</small></dd></div>
+          </dl>
+        </div>
+
+        <div class="hero-panel-wrap">
+          <div class="panel-corner panel-corner-tl" aria-hidden="true"></div>
+          <div class="panel-corner panel-corner-br" aria-hidden="true"></div>
+          <aside class="market-panel" aria-label="显卡价格指数">
+            <div class="panel-head">
+              <div>
+                <span class="micro-label">GPU PRICE INDEX</span>
+                <h2>显卡价格指数</h2>
+              </div>
+              <span class="live-pill"><i></i>LIVE</span>
+            </div>
+            <div class="index-row">
+              <strong class="index-value" id="index-value">—</strong>
+              <span class="index-change" id="index-change">—</span>
+            </div>
+            <p class="index-caption">较 30 天前 <span id="index-caption">—</span> · 基期 1000</p>
+            <div class="market-chart" id="market-chart" aria-label="近 30 天显卡价格指数走势"></div>
+            <div class="market-axis"><span>10/10</span><span>10/25</span><span>11/08</span></div>
+            <div class="market-stats">
+              <div><span class="stat-dot down"></span><strong id="market-down">—</strong><span>降价</span></div>
+              <div><span class="stat-dot up"></span><strong id="market-up">—</strong><span>涨价</span></div>
+              <div><span class="stat-dot flat"></span><strong id="market-flat">—</strong><span>持平</span></div>
+            </div>
+            <div class="market-foot">
+              <span>今日中位价</span>
+              <strong id="market-median">—</strong>
+              <span class="market-foot-sep"></span>
+              <span>30 天平均波动</span>
+              <strong id="market-avg">—</strong>
+            </div>
+          </aside>
+          <div class="panel-sticker" aria-hidden="true">
+            <span>4 CHANNELS</span>
+            <strong>持续比价</strong>
+          </div>
+        </div>
+      </div>
+      <div class="hero-grid-lines" aria-hidden="true"></div>
+    </section>
+
+    <div class="ticker" aria-label="最新显卡价格变化">
+      <div class="ticker-label"><i></i>LIVE FEED</div>
+      <div class="ticker-viewport">
+        <div class="ticker-track" id="ticker-track"></div>
+      </div>
+    </div>
+
+    <section class="catalog section" id="catalog">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-title">
+            <p class="eyebrow"><span></span>ALL GRAPHICS CARDS</p>
+            <h2>今天的显卡，<span class="serif-accent">什么价？</span></h2>
+          </div>
+          <div class="section-meta">
+            <span class="update-pill"><i></i>11:32 更新</span>
+            <p><b id="total-count">12</b> 款在榜 · 价格含税</p>
+          </div>
+        </div>
+
+        <div class="filter-shell" id="filter-shell">
+          <div class="filter-main">
+            <label class="search-box" for="search-input">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="m16 16 4 4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+              <input id="search-input" type="search" placeholder="搜索型号，例如 RTX 5070" autocomplete="off" spellcheck="false">
+              <span class="search-hint">/</span>
+            </label>
+
+            <div class="brand-tabs" id="brand-tabs" role="group" aria-label="按品牌筛选">
+              <button class="brand-tab is-active" type="button" data-brand="all">全部 <span id="count-all">12</span></button>
+              <button class="brand-tab" type="button" data-brand="NVIDIA"><i class="brand-dot nvidia"></i>NVIDIA <span id="count-nvidia">6</span></button>
+              <button class="brand-tab" type="button" data-brand="AMD"><i class="brand-dot amd"></i>AMD <span id="count-amd">3</span></button>
+              <button class="brand-tab" type="button" data-brand="Intel"><i class="brand-dot intel"></i>INTEL <span id="count-intel">2</span></button>
+            </div>
+
+            <div class="filter-selects">
+              <label class="select-wrap">
+                <span class="select-label">价位</span>
+                <select id="price-filter" aria-label="按价位筛选">
+                  <option value="all">全部价位</option>
+                  <option value="0-2000">¥2,000 以下</option>
+                  <option value="2000-4000">¥2,000 – 4,000</option>
+                  <option value="4000-8000">¥4,000 – 8,000</option>
+                  <option value="8000-99999">¥8,000 以上</option>
+                </select>
+              </label>
+              <label class="select-wrap">
+                <span class="select-label">排序</span>
+                <select id="sort-filter" aria-label="排序方式">
+                  <option value="featured">编辑推荐</option>
+                  <option value="price-asc">价格从低到高</option>
+                  <option value="drop-desc">近 30 天降幅</option>
+                  <option value="perf-desc">性能从高到低</option>
+                  <option value="new-low">历史低点优先</option>
+                </select>
+              </label>
+            </div>
+          </div>
+
+          <div class="filter-sub">
+            <label class="switch">
+              <input id="only-drops" type="checkbox">
+              <span class="switch-track"><i></i></span>
+              <span>只看今日降价</span>
+            </label>
+            <p class="filter-summary" id="filter-summary">显示全部 12 款显卡</p>
+            <button class="reset-button" id="reset-filters" type="button">重置筛选</button>
+          </div>
+        </div>
+
+        <div class="cards-grid" id="cards-grid" aria-live="polite"></div>
+        <div class="empty-state" id="empty-state" hidden>
+          <span class="empty-mark" aria-hidden="true">0</span>
+          <h3>没有找到这张显卡</h3>
+          <p>换个型号、品牌或价位试试。价格市场里，总有一张适合你。</p>
+          <button class="button button-primary" id="empty-reset" type="button">清空筛选</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="notes section" id="notes">
+      <div class="container">
+        <div class="notes-head">
+          <div>
+            <p class="eyebrow"><span></span>PRICE NOTES / 2026.11</p>
+            <h2>这周，<span class="serif-accent">价格在说什么？</span></h2>
+          </div>
+          <p class="notes-intro">把 90 天的价格折成几行结论。不是购买建议，只是帮你少走一点弯路。</p>
+        </div>
+        <div class="notes-grid" id="notes-grid"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-cta">
+        <div>
+          <p class="eyebrow"><span></span>KEEP WATCHING</p>
+          <h2>下一张显卡，<br><span class="serif-accent">等一个好价。</span></h2>
+        </div>
+        <button class="round-link" id="back-to-catalog" type="button" aria-label="回到显卡列表">
+          <span>回到显卡库</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+      <div class="footer-main">
+        <div class="footer-brand">
+          <span class="brand-type">GPU<span>//</span>RADAR</span>
+          <p>把显卡价格，放进同一张图里。</p>
+        </div>
+        <div class="footer-col">
+          <span>浏览</span>
+          <a href="#market">今日行情</a>
+          <a href="#catalog">全部显卡</a>
+          <button type="button" data-action="drops">降价榜</button>
+        </div>
+        <div class="footer-col">
+          <span>数据</span>
+          <p>4 个渠道比价</p>
+          <p>90 天价格历史</p>
+          <p>每日 11:30 更新</p>
+        </div>
+        <div class="footer-col">
+          <span>说明</span>
+          <p>演示项目</p>
+          <p>价格为模拟数据</p>
+          <p>不构成购买建议</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 GPU//RADAR · 独立显卡价格观察</p>
+        <p class="footer-disclaimer">本页为前端演示项目，所有价格、指数与渠道信息均为模拟样本，请勿作为实际购买依据。</p>
+        <p>DATA AS OF 2026.11.08</p>
+      </div>
+      <div class="footer-watermark" aria-hidden="true">PRICE<br>RADAR</div>
+    </div>
+  </footer>
+
+  <div class="drawer-layer" id="detail-layer" hidden>
+    <div class="drawer-backdrop" data-close-detail></div>
+    <aside class="detail-drawer" id="detail-drawer" role="dialog" aria-modal="true" aria-labelledby="detail-title">
+      <div class="drawer-content" id="detail-content"></div>
+    </aside>
+  </div>
+
+  <div class="modal-layer" id="compare-layer" hidden>
+    <div class="modal-backdrop" data-close-compare></div>
+    <section class="compare-modal" role="dialog" aria-modal="true" aria-labelledby="compare-title">
+      <header class="modal-head">
+        <div>
+          <p class="eyebrow"><span></span>SPEC CHECK</p>
+          <h2 id="compare-title">显卡对比</h2>
+        </div>
+        <button class="icon-button" type="button" data-close-compare aria-label="关闭对比">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+        </button>
+      </header>
+      <div id="compare-content"></div>
+    </section>
+  </div>
+
+  <div class="modal-layer" id="alerts-layer" hidden>
+    <div class="modal-backdrop" data-close-alerts></div>
+    <section class="alerts-modal" role="dialog" aria-modal="true" aria-labelledby="alerts-title">
+      <header class="modal-head">
+        <div>
+          <p class="eyebrow"><span></span>PRICE WATCH</p>
+          <h2 id="alerts-title">我的价格提醒</h2>
+        </div>
+        <button class="icon-button" type="button" data-close-alerts aria-label="关闭价格提醒">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+        </button>
+      </header>
+      <div id="alerts-content"></div>
+    </section>
+  </div>
+
+  <div class="compare-tray" id="compare-tray" hidden>
+    <div class="tray-label">对比 <span id="tray-count">0</span>/3</div>
+    <div class="tray-items" id="tray-items"></div>
+    <div class="tray-actions">
+      <button class="tray-clear" id="tray-clear" type="button">清空</button>
+      <button class="button button-primary tray-start" id="tray-start" type="button">开始对比</button>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <noscript>
+    <div class="noscript">这个页面需要 JavaScript 来绘制价格曲线和筛选显卡，请在浏览器中启用 JavaScript。</div>
+  </noscript>
+
+  <script src="assets/data.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
